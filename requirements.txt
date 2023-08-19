@@ -1,0 +1,17 @@
+numpy
+pandas
+matplotlib
+seaborn
+plotly
+cufflinks
+ipynb
+scipy
+scikit_learn
+imbalanced-learn
+dill
+streamlit
+keras
+tensorflow
+tqdm
+pydot
+h5pyda 
