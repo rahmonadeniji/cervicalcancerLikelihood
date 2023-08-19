@@ -16,13 +16,12 @@ import streamlit as st
 
 
 
-
 def predict_pipepline(Dx, Dx_HPV, STDs_HPV, Hormonal_contraceptives_years, IUD, First_sexual_Intercourse, cigarette_pack_per_year):
 
-    transformer_object_import = open("/Users/rahmonolusegunadeniji/Documents/Project/model_and_transformer/scaler.pkl", "rb")
+    transformer_object_import = open("model_and_transformer/scaler.pkl", "rb")
     scaler = pickle.load(transformer_object_import)
 
-    model_object_import = open("/Users/rahmonolusegunadeniji/Documents/Project/model_and_transformer/model.pkl", "rb")
+    model_object_import = open("model_and_transformer/model.pkl", "rb")
     model = pickle.load(model_object_import)
 
     standardized_values = scaler.transform(np.array([[Dx, Dx_HPV, STDs_HPV, Hormonal_contraceptives_years, IUD, First_sexual_Intercourse, cigarette_pack_per_year]]))
@@ -74,7 +73,7 @@ def image_predict(image):
 
     class_label = ['Koilocytotic', 'Parabasal', 'Superficial_Intermediate', 'Dyskeratotic', 'Metaplastic']
 
-    model_import = load_model("/Users/rahmonolusegunadeniji/Documents/Project/Image_cervical_models/best_checkpoint2.h5")
+    model_import = load_model("Image_cervical_models/best_checkpoint2.h5")
 
 
     ypred = model_import.predict(feature_extract)

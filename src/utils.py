@@ -6,6 +6,8 @@ import pickle
 
 import h5py
 
+import streamlit as st
+
 import keras
 
 import tensorflow as tf
@@ -19,11 +21,12 @@ class load_models:
         self.model_path = model_path
 
     def load_feature_extraction_model(self):
+
         image_feature_model = keras.models.load_model(self.model_path)
 
         return image_feature_model
 
-obj = load_models("/Users/rahmonolusegunadeniji/Documents/Project/image_models/merged_model2.h5")
+obj = load_models("image_models/merged_model2.h5")
 m_model = obj.load_feature_extraction_model()
 
 print(m_model.output.shape)
