@@ -22,7 +22,7 @@ class load_models:
 
     def load_feature_extraction_model(self):
 
-        image_feature_model = keras.models.load_model(self.model_path)
+        image_feature_model = tf.keras.models.load_model(self.model_path)
 
         return image_feature_model
 
