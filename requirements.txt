@@ -9,7 +9,7 @@ scipy
 scikit_learn
 imbalanced-learn
 dill
-streamlit
+streamlit==1.25.0
 keras
 tensorflow
 tqdm
