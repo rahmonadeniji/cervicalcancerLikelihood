@@ -130,9 +130,17 @@ def main():
     elif label == "Dyskeratotic":
         Dx = 1
         Dx_HPV = 1
-    else:
+    elif label == "Parabasal":
         Dx = 0
         Dx_HPV = 0
+    elif label == "Metaplastic":
+        Dx = 0
+        Dx_HPV = 0
+    elif label == "Superficial_Intermediate":
+        Dx = 0
+        Dx_HPV = 0
+    else:
+        st.write("You can't proceed until you upload histopathological Image")
     
     st.write("Predicted Cellular changes: ", label)
 
