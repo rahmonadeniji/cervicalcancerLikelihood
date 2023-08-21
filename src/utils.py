@@ -15,11 +15,13 @@ import tensorflow as tf
 from keras.models import load_model
 from keras.preprocessing.image import ImageDataGenerator
 
+@st.cache
 class load_models:
 
     def __init__(self, model_path):
         self.model_path = model_path
 
+    @st.cache
     def load_feature_extraction_model(self):
 
         image_feature_model = tf.keras.models.load_model(self.model_path)

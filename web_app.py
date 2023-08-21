@@ -15,7 +15,7 @@ from src.utils import m_model
 import streamlit as st
 
 
-
+@st.cache
 def predict_pipepline(Dx, Dx_HPV, STDs_HPV, Hormonal_contraceptives_years, IUD, First_sexual_Intercourse, cigarette_pack_per_year):
 
     transformer_object_import = open("model_and_transformer/scaler.pkl", "rb")
@@ -32,7 +32,7 @@ def predict_pipepline(Dx, Dx_HPV, STDs_HPV, Hormonal_contraceptives_years, IUD, 
 
     return model_prediction
 
-
+@st.cache
 def image_predict(image):
 
     #image_feature_obj = open ("/Users/rahmonolusegunadeniji/Documents/Project/image_models/feature_extractor.pkl", "rb")
@@ -84,7 +84,7 @@ def image_predict(image):
 
     return  ypred_label
 
-
+@st.cache
 def main():
     st.title("Cervical Cancer Prediction")
     st.image("cervical-cancer-image1-streamlit.jpeg")
